@@ -8,30 +8,33 @@ const mensagens = [
     'No fundo, você sabe a resposta'
 ]
 
-function textoMensagem(){
-    const random = Math.floor(Math.random() * (4 - 0) + 0 )
-    console.log(random);
-    switch (random) {
-        case 0:
-            return `${mensagens[0]}`
-            break;
-        case 1:
-            return `${mensagens[1]}`
-            break;
-        case 2:
-            return `${mensagens[2]}`
-            break;
-        case 3:
-            return `${mensagens[3]}`
-            break;
+class Jogada{
+    static textoMensagem(){
+        const random = Math.floor(Math.random() * (4 - 0) + 0 )
+        console.log(random);
+        switch (random) {
+            case 0:
+                return `${mensagens[0]}`
+                break;
+            case 1:
+                return `${mensagens[1]}`
+                break;
+            case 2:
+                return `${mensagens[2]}`
+                break;
+            case 3:
+                return `${mensagens[3]}`
+                break;
+        }
     }
+
 }
 
 function renderizarMensagem(){
     const divMensagem = document.querySelector('#mensagem')
     divMensagem.innerHTML = ''
     const span = document.createElement('span')
-    span.innerText = textoMensagem()
+    span.innerText = Jogada.textoMensagem.call()
     divMensagem.appendChild(span)
 }
 
